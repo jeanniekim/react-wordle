@@ -19,16 +19,10 @@ export const Navbar = ({
   return (
     <div className="navbar">
       <div className="navbar-content px-5">
-        <div className="left-icons">
-          <InformationCircleIcon
-            className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
-            onClick={() => setIsInfoModalOpen(true)}
-          />
-          <CogIcon
-            className="h-6 w-6 cursor-pointer dark:stroke-white"
-            onClick={() => setIsSettingsModalOpen(true)}
-          />
-        </div>
+        <InformationCircleIcon
+          className="h-6 w-6 mr-10 cursor-pointer dark:stroke-white"
+          onClick={() => setIsInfoModalOpen(true)}
+        />
         {/*<p className="text-xl ml-2.5 font-bold dark:text-white">{GAME_TITLE}</p>*/}
         <img className="max-h-[75%]" src="mqordle.png"></img>
         <div className="right-icons">
