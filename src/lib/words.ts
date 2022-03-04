@@ -79,7 +79,8 @@ export const getWordOfDay = () => {
   const epochMs = new Date(2022, 0).valueOf()
   const now = Date.now()
   const msInDay = 86400000
-  const index = Math.floor((now - epochMs) / msInDay)
+  // Get random word, independent of the date/whatever
+  const index = Math.floor(Math.random()*WORDS.length)
   const nextday = (index + 1) * msInDay + epochMs
 
   return {
