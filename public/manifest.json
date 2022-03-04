@@ -1,6 +1,6 @@
 {
-  "short_name": "Game",
-  "name": "Game",
+  "short_name": "MQordle",
+  "name": "MQordle",
   "icons": [
     {
       "src": "favicon.ico",
