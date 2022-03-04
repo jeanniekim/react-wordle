@@ -11,12 +11,14 @@ export const HARD_MODE_DESCRIPTION =
 export const FUNNY_MODE_DESCRIPTION =
   'Changes the correct word after every guess'
 export const HIGH_CONTRAST_MODE_DESCRIPTION = 'For improved color vision'
+export const CORRECT_WORD_PREFIXES = ['L + Ratio +', 'Ha! I win again.', 'It must be difficult being this stupid.', 'You\'ll get it eventually.', 'You suck.', 'Unsurprising.']
 export const CORRECT_WORD_MESSAGE = (isFunnyMode: boolean, solution: string, rowSolutions: string[]) =>
-  isFunnyMode ?
-  `L + Ratio + The words were ${rowSolutions.join(', ')}` :
-  `L + Ratio + The word was ${solution}`
+  CORRECT_WORD_PREFIXES[Math.floor(Math.random()*CORRECT_WORD_PREFIXES.length)] + (isFunnyMode ?
+  ` The words were ${rowSolutions.join(', ')}` :
+  ` The word was ${solution}`)
 export const FUNNY_MODE_MESSAGE = (rowSolutions: string[]) =>
   `Alright, fine, we were messing with you. The game will play normally now.`
+export const CORRECT_FUNNY_MODE_MESSAGE = 'Alright, fine, we were messing with you - but you somehow managed to get it anyway. The game will play normally now.'
 export const WRONG_SPOT_MESSAGE = (guess: string, position: number) =>
   `Must use ${guess} in position ${position}`
 export const NOT_CONTAINED_MESSAGE = (letter: string) =>

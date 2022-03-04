@@ -13,6 +13,7 @@ import {
   HARD_MODE_ALERT_MESSAGE,
   FUNNY_MODE_MESSAGE,
   NEW_WORD_TEXT,
+  CORRECT_FUNNY_MODE_MESSAGE,
 } from './constants/strings'
 import {
   MAX_WORD_LENGTH,
@@ -158,10 +159,17 @@ function App() {
         WIN_MESSAGES[Math.floor(Math.random() * WIN_MESSAGES.length)]
       const delayMs = REVEAL_TIME_MS * MAX_WORD_LENGTH
 
-      showSuccessAlert(winMessage, {
-        delayMs,
-        onClose: () => setIsStatsModalOpen(true),
-      })
+      if (isFunnyMode && !localStorage.getItem('funnyMode')) {
+        showSuccessAlert(CORRECT_FUNNY_MODE_MESSAGE, {
+          delayMs,
+          onClose: () => setIsStatsModalOpen(true),
+        })
+      } else {
+        showSuccessAlert(winMessage, {
+          delayMs,
+          onClose: () => setIsStatsModalOpen(true),
+        })
+      }
     }
 
     if (isGameLost) {
