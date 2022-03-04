@@ -17,12 +17,32 @@ export const shareStatus = (
   isHighContrastMode: boolean,
   handleShareToClipboard: () => void
 ) => {
-  const textToShare =
+  /*const textToShare =
     `${GAME_TITLE} ${solutionIndex} ${
       lost ? 'X' : guesses.length
     }/${MAX_CHALLENGES}${isHardMode ? '*' : ''}\n\n` +
-    generateEmojiGrid(guesses, getEmojiTiles(isDarkMode, isHighContrastMode))
+    generateEmojiGrid(guesses, getEmojiTiles(isDarkMode, isHighContrastMode))*/
 
+  const textToShare = 
+    `This attention seeker wanted to share their MQordle score, but we saved them from themselves.\n` +
+    `Join the MQ, Tuesdays at 6PM in Half Dome Lounge.\n` +
+    `⬜⬜⬜⬜⬜⬜⬜⬜⬜\n` +
+    `⬜⬜⬛⬜⬜⬜⬛⬜⬜\n` +
+    `⬜⬛⬜⬛⬜⬛⬜⬛⬜\n` +
+    `⬜⬛⬜⬛⬜⬛⬜⬛⬜\n` +
+    `⬜⬛⬜⬜⬛⬜⬜⬛⬜\n` +
+    `⬜⬛⬜⬜⬛⬜⬜⬛⬜\n` +
+    `⬜⬛⬜⬜⬛⬜⬜⬛⬜\n` +
+    `⬜⬜⬜⬜⬜⬜⬜⬜⬜\n` +
+    `⬜⬜⬜⬛⬛⬛⬜⬜⬜\n` +
+    `⬜⬜⬛⬜⬜⬜⬛⬜⬜\n` +
+    `⬜⬛⬜⬜⬜⬜⬜⬛⬜\n` +
+    `⬜⬛⬜⬜⬜⬜⬜⬛⬜\n` +
+    `⬜⬛⬜⬜⬜⬛⬜⬛⬜\n` +
+    `⬜⬜⬛⬜⬜⬜⬛⬜⬜\n` +
+    `⬜⬜⬜⬛⬛⬛⬜⬛⬜\n` +
+    `⬜⬜⬜⬜⬜⬜⬜⬜⬜`;
+    
   const shareData = { text: textToShare }
 
   let shareSuccess = false
