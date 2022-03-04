@@ -5,19 +5,19 @@
 :root {
   --animation-speed: 1000ms;
   --animation-speed-fast: 250ms;
-  --default-cell-bg-color: theme('colors.white');
-  --default-cell-border-color: theme('colors.black');
+  --default-cell-bg-color: '#121213';
+  --default-cell-border-color: '#3a3a3c';
   --default-cell-text-color: theme('colors.black');
-  --absent-cell-bg-color: theme('colors.slate.400');
-  --correct-cell-bg-color: theme('colors.green.400');
-  --present-cell-bg-color: theme('colors.yellow.400');
+  --absent-cell-bg-color: '#3a3a3c';
+  --correct-cell-bg-color: '#538d4e';
+  --present-cell-bg-color: '#b59f3b';
 }
 
 .dark {
-  --default-cell-bg-color: theme('colors.slate.900');
-  --default-cell-border-color: theme('colors.white');
+  --default-cell-bg-color: '#121213';
+  --default-cell-border-color: '#3a3a3c';
   --default-cell-text-color: theme('colors.white');
-  --absent-cell-bg-color: theme('colors.slate.700');
+  --absent-cell-bg-color: '#3a3a3c';
 }
 
 .high-contrast {
