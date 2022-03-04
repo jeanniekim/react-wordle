@@ -81,6 +81,10 @@ svg.cursor-pointer:hover {
   display: flex;
 }
 
+.left-icons {
+  display: flex;
+}
+
 @keyframes revealAbsentCharCell {
   0% {
     transform: rotateX(0deg);
