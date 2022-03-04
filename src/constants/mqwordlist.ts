@@ -26,4 +26,17 @@ export const WORDS = [
     'funny',
     'hahah',
     'heheh',
+    'jesus',
+    'chode',
+    'penis',
+    'sussy',
+    'aaaaa',
+    'bussy',
+    'wordl',
+    'jacob',
+    'bongs',
+    'boing',
+    'ruble',
+    'euros',
+    'banal'
 ]
