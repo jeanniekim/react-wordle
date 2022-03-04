@@ -1,5 +1,9 @@
 import { BaseModal } from './BaseModal'
 import { SettingsToggle } from './SettingsToggle'
+import {
+  HARD_MODE_DESCRIPTION,
+  HIGH_CONTRAST_MODE_DESCRIPTION,
+} from '../../constants/strings'
 
 type Props = {
   isOpen: boolean
@@ -24,11 +28,12 @@ export const SettingsModal = ({
 }: Props) => {
   return (
     <BaseModal title="Settings" isOpen={isOpen} handleClose={handleClose}>
-      <div className="grid-cols-2 gap-4">
+      <div className="flex flex-col mt-2 divide-y">
         <SettingsToggle
           settingName="Hard Mode"
           flag={isHardMode}
           handleFlag={handleHardMode}
+          description={HARD_MODE_DESCRIPTION}
         />
         <SettingsToggle
           settingName="Dark Mode"
@@ -39,6 +44,7 @@ export const SettingsModal = ({
           settingName="High Contrast Mode"
           flag={isHighContrastMode}
           handleFlag={handleHighContrastMode}
+          description={HIGH_CONTRAST_MODE_DESCRIPTION}
         />
       </div>
     </BaseModal>
