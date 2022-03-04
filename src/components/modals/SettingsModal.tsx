@@ -46,12 +46,12 @@ export const SettingsModal = ({
           handleFlag={handleFunnyMode}
           description={FUNNY_MODE_DESCRIPTION}
         ></SettingsToggle>
-        <SettingsToggle
+        {/*<SettingsToggle
           settingName="Dark Mode"
           flag={isDarkMode}
           handleFlag={handleDarkMode}
         />
-        {/*<SettingsToggle
+        <SettingsToggle
           settingName="High Contrast Mode"
           flag={isHighContrastMode}
           handleFlag={handleHighContrastMode}
