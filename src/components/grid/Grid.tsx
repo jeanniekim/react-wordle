@@ -28,6 +28,7 @@ export const Grid = ({
           key={i}
           guess={guess}
           isRevealing={isRevealing && guesses.length - 1 === i}
+          row={i}
         />
       ))}
       {guesses.length < MAX_CHALLENGES && (

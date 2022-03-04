@@ -1,4 +1,4 @@
-import { solution, unicodeSplit } from './words'
+import { solution, rowSolutions, unicodeSplit } from './words'
 
 export type CharStatus = 'absent' | 'present' | 'correct'
 
@@ -6,9 +6,9 @@ export const getStatuses = (
   guesses: string[]
 ): { [key: string]: CharStatus } => {
   const charObj: { [key: string]: CharStatus } = {}
-  const splitSolution = unicodeSplit(solution)
 
-  guesses.forEach((word) => {
+  guesses.forEach((word, row) => {
+    const splitSolution = unicodeSplit(rowSolutions[row])
     unicodeSplit(word).forEach((letter, i) => {
       if (!splitSolution.includes(letter)) {
         // make status absent
@@ -30,8 +30,8 @@ export const getStatuses = (
   return charObj
 }
 
-export const getGuessStatuses = (guess: string): CharStatus[] => {
-  const splitSolution = unicodeSplit(solution)
+export const getGuessStatuses = (guess: string, row: number): CharStatus[] => {
+  const splitSolution = unicodeSplit(rowSolutions[row])
   const splitGuess = unicodeSplit(guess)
 
   const solutionCharsTaken = splitSolution.map((_) => false)

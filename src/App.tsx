@@ -11,6 +11,8 @@ import {
   WORD_NOT_FOUND_MESSAGE,
   CORRECT_WORD_MESSAGE,
   HARD_MODE_ALERT_MESSAGE,
+  FUNNY_MODE_MESSAGE,
+  NEW_WORD_TEXT,
 } from './constants/strings'
 import {
   MAX_WORD_LENGTH,
@@ -25,6 +27,9 @@ import {
   solution,
   findFirstUnusedReveal,
   unicodeLength,
+  getWordOfDay,
+  chooseNewWord,
+  rowSolutions,
 } from './lib/words'
 import { addStatsForCompletedGame, loadStats } from './lib/stats'
 import {
@@ -61,6 +66,11 @@ function App() {
       ? true
       : false
   )
+  const [isFunnyMode, setIsFunnyMode] = useState(
+    localStorage.getItem('funnyMode')
+      ? localStorage.getItem('funnyMode') === 'extremely'
+      : true
+  )
   const [isHighContrastMode, setIsHighContrastMode] = useState(
     getStoredIsHighContrastMode()
   )
@@ -76,9 +86,12 @@ function App() {
     }
     if (loaded.guesses.length === MAX_CHALLENGES && !gameWasWon) {
       setIsGameLost(true)
-      showErrorAlert(CORRECT_WORD_MESSAGE(solution), {
-        persist: true,
-      })
+      showErrorAlert(
+        CORRECT_WORD_MESSAGE(isFunnyMode, solution, rowSolutions),
+        {
+          persist: true,
+        }
+      )
     }
     return loaded.guesses
   })
@@ -118,6 +131,11 @@ function App() {
   const handleDarkMode = (isDark: boolean) => {
     setIsDarkMode(isDark)
     localStorage.setItem('theme', isDark ? 'dark' : 'light')
+  }
+
+  const handleFunnyMode = (isFunny: boolean) => {
+    setIsFunnyMode(isFunny)
+    localStorage.setItem('funnyMode', isFunny ? 'extremely' : 'no')
   }
 
   const handleHardMode = (isHard: boolean) => {
@@ -216,6 +234,11 @@ function App() {
 
     const winningWord = isWinningWord(currentGuess)
 
+    rowSolutions[guesses.length] = solution
+
+    //Do the funny
+    if (isFunnyMode) chooseNewWord()
+
     if (
       unicodeLength(currentGuess) === MAX_WORD_LENGTH &&
       guesses.length < MAX_CHALLENGES &&
@@ -232,10 +255,22 @@ function App() {
       if (guesses.length === MAX_CHALLENGES - 1) {
         setStats(addStatsForCompletedGame(stats, guesses.length + 1))
         setIsGameLost(true)
-        showErrorAlert(CORRECT_WORD_MESSAGE(solution), {
-          persist: true,
-          delayMs: REVEAL_TIME_MS * MAX_WORD_LENGTH + 1,
-        })
+        if (isFunnyMode && !localStorage.getItem('funnyMode')) {
+          setIsFunnyMode(false)
+          localStorage.setItem('funnyMode', 'no')
+          showErrorAlert(FUNNY_MODE_MESSAGE(rowSolutions), {
+            persist: true,
+            delayMs: REVEAL_TIME_MS * MAX_WORD_LENGTH + 1,
+          })
+        } else {
+          showErrorAlert(
+            CORRECT_WORD_MESSAGE(isFunnyMode, solution, rowSolutions),
+            {
+              persist: true,
+              delayMs: REVEAL_TIME_MS * MAX_WORD_LENGTH + 1,
+            }
+          )
+        }
       }
     }
   }
@@ -255,6 +290,21 @@ function App() {
             isRevealing={isRevealing}
             currentRowClassName={currentRowClass}
           />
+          {isGameWon || isGameLost ? (
+            <div className="flex justify-center mb-1">
+              <button
+                type="button"
+                className="rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-600 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:text-sm"
+                onClick={() => {
+                  window.location.reload()
+                }}
+              >
+                {NEW_WORD_TEXT}
+              </button>
+            </div>
+          ) : (
+            ''
+          )}
         </div>
         <Keyboard
           onChar={onChar}
@@ -286,6 +336,8 @@ function App() {
           handleClose={() => setIsSettingsModalOpen(false)}
           isHardMode={isHardMode}
           handleHardMode={handleHardMode}
+          isFunnyMode={isFunnyMode}
+          handleFunnyMode={handleFunnyMode}
           isDarkMode={isDarkMode}
           handleDarkMode={handleDarkMode}
           isHighContrastMode={isHighContrastMode}

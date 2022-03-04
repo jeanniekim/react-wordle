@@ -8,9 +8,15 @@ export const HARD_MODE_ALERT_MESSAGE =
   'Hard Mode can only be enabled at the start!'
 export const HARD_MODE_DESCRIPTION =
   'Any revealed hints must be used in subsequent guesses'
+export const FUNNY_MODE_DESCRIPTION =
+  'Changes the correct word after every guess'
 export const HIGH_CONTRAST_MODE_DESCRIPTION = 'For improved color vision'
-export const CORRECT_WORD_MESSAGE = (solution: string) =>
+export const CORRECT_WORD_MESSAGE = (isFunnyMode: boolean, solution: string, rowSolutions: string[]) =>
+  isFunnyMode ?
+  `L + Ratio + The words were ${rowSolutions.join(', ')}` :
   `L + Ratio + The word was ${solution}`
+export const FUNNY_MODE_MESSAGE = (rowSolutions: string[]) =>
+`Alright, fine, we were messing with you. Funny mode has been switched off, but if you\'re a masochist, you can switch it back on in settings. The words were ${rowSolutions.join(', ')}`
 export const WRONG_SPOT_MESSAGE = (guess: string, position: number) =>
   `Must use ${guess} in position ${position}`
 export const NOT_CONTAINED_MESSAGE = (letter: string) =>
@@ -21,7 +27,7 @@ export const STATISTICS_TITLE = 'Statistics'
 export const GUESS_DISTRIBUTION_TEXT = 'Guess Distribution'
 export const NEW_WORD_TEXT = 'New Word'
 export const NOBODY_CARES_TEXT = 'Error, could not share: Nobody cares.'
-export const SHARE_TEXT = 'Annoy Twitter Followers'
+export const SHARE_TEXT = 'Annoy Twitter'
 export const TOTAL_TRIES_TEXT = 'Total tries'
 export const SUCCESS_RATE_TEXT = 'Success rate'
 export const CURRENT_STREAK_TEXT = 'Current streak'

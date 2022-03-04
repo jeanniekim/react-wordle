@@ -3,6 +3,7 @@ import { SettingsToggle } from './SettingsToggle'
 import {
   HARD_MODE_DESCRIPTION,
   HIGH_CONTRAST_MODE_DESCRIPTION,
+  FUNNY_MODE_DESCRIPTION
 } from '../../constants/strings'
 
 type Props = {
@@ -10,7 +11,9 @@ type Props = {
   handleClose: () => void
   isHardMode: boolean
   handleHardMode: Function
-  isDarkMode: boolean
+  isDarkMode: boolean,
+  isFunnyMode: boolean,
+  handleFunnyMode: Function,
   handleDarkMode: Function
   isHighContrastMode: boolean
   handleHighContrastMode: Function
@@ -21,6 +24,8 @@ export const SettingsModal = ({
   handleClose,
   isHardMode,
   handleHardMode,
+  isFunnyMode,
+  handleFunnyMode,
   isDarkMode,
   handleDarkMode,
   isHighContrastMode,
@@ -35,6 +40,12 @@ export const SettingsModal = ({
           handleFlag={handleHardMode}
           description={HARD_MODE_DESCRIPTION}
         />
+        <SettingsToggle
+          settingName="Funny Mode"
+          flag={isFunnyMode}
+          handleFlag={handleFunnyMode}
+          description={FUNNY_MODE_DESCRIPTION}
+        ></SettingsToggle>
         {/*<SettingsToggle
           settingName="Dark Mode"
           flag={isDarkMode}

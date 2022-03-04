@@ -25,7 +25,7 @@ export const findFirstUnusedReveal = (word: string, guesses: string[]) => {
 
   const lettersLeftArray = new Array<string>()
   const guess = guesses[guesses.length - 1]
-  const statuses = getGuessStatuses(guess)
+  const statuses = getGuessStatuses(guess, guesses.length - 1)
   const splitWord = unicodeSplit(word)
   const splitGuess = unicodeSplit(guess)
 
@@ -90,4 +90,13 @@ export const getWordOfDay = () => {
   }
 }
 
-export const { solution, solutionIndex, tomorrow } = getWordOfDay()
+export var { solution, solutionIndex, tomorrow } = getWordOfDay()
+
+export var rowSolutions = ["","","","","",""]
+
+export const chooseNewWord = () => {
+  const h = getWordOfDay()
+  solution = h.solution
+  solutionIndex = h.solutionIndex
+  tomorrow = h.tomorrow
+}

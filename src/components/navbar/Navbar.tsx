@@ -3,7 +3,7 @@ import {
   CogIcon,
   InformationCircleIcon,
 } from '@heroicons/react/outline'
-import { GAME_TITLE } from '../../constants/strings'
+import { GAME_TITLE, NEW_WORD_TEXT } from '../../constants/strings'
 
 type Props = {
   setIsInfoModalOpen: (value: boolean) => void
