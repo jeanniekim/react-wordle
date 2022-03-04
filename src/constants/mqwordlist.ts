@@ -20,5 +20,10 @@ export const WORDS = [
     'final',
     'edits',
     'mario',
-    'bearl'
+    'bearl',
+    'aaron',
+    'fucks',
+    'funny',
+    'hahah',
+    'heheh',
 ]
