@@ -16,7 +16,7 @@ export const CORRECT_WORD_MESSAGE = (isFunnyMode: boolean, solution: string, row
   `L + Ratio + The words were ${rowSolutions.join(', ')}` :
   `L + Ratio + The word was ${solution}`
 export const FUNNY_MODE_MESSAGE = (rowSolutions: string[]) =>
-`Alright, fine, we were messing with you. Funny mode has been switched off, but if you\'re a masochist, you can switch it back on in settings. The words were ${rowSolutions.join(', ')}`
+  `Alright, fine, we were messing with you. The game will play normally now.`
 export const WRONG_SPOT_MESSAGE = (guess: string, position: number) =>
   `Must use ${guess} in position ${position}`
 export const NOT_CONTAINED_MESSAGE = (letter: string) =>
