@@ -38,5 +38,11 @@ export const WORDS = [
     'boing',
     'ruble',
     'euros',
-    'banal'
+    'banal',
+    'pussy',
+    'satir',
+    'cummy',
+    'words',
+    'nutss',
+    'perry'
 ]
