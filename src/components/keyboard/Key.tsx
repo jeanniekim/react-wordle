@@ -31,13 +31,13 @@ export const Key = ({
       'bg-slate-200 dark:bg-[#818384] hover:bg-slate-300 active:bg-slate-400':
         !status,
       'bg-slate-400 dark:bg-slate-800 text-white': status === 'absent',
-      'bg-orange-500 hover:bg-orange-600 active:bg-orange-700 text-white':
+      'bg-orange-500 hover:bg-orange-500 active:bg-orange-700 text-white':
         status === 'correct' && isHighContrast,
-      'bg-cyan-500 hover:bg-cyan-600 active:bg-cyan-700 text-white':
+      'bg-cyan-500 hover:bg-cyan-500 active:bg-cyan-700 text-white':
         status === 'present' && isHighContrast,
-      'bg-green-500 hover:bg-green-600 active:bg-green-700 text-white':
+      'bg-green-500 hover:bg-green-500 active:bg-green-700 text-white':
         status === 'correct' && !isHighContrast,
-      'bg-yellow-500 hover:bg-yellow-600 active:bg-yellow-700 text-white':
+      'bg-yellow-500 hover:bg-yellow-500 active:bg-yellow-700 text-white':
         status === 'present' && !isHighContrast,
     }
   )
