@@ -1,0 +1,16 @@
+MQordle -> a wordle game where the word changes every time you guess
+
+2/24/22 
+
+App.tsx
+- onEnter
+    - randomize new word?
+
+- solution, isWinningWord
+
+solution and isWinningWord is set in stone
+- need to update it every enter
+    - what do they use to get the word in the first place?
+    - hopefully it's random
+    - call that every enter and update variables (somehow)
+    
