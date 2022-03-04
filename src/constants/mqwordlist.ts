@@ -23,4 +23,7 @@ export const WORDS = [
     'bearl',
     'aaron',
     'fucks',
+    'funny',
+    'hahah',
+    'heheh',
 ]
