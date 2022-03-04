@@ -1,6 +1,6 @@
 export const GAME_TITLE = process.env.REACT_APP_GAME_NAME!
 
-export const WIN_MESSAGES = ['WOWIE! You\'ve done it now...', 'Amazong.', 'Well did!']
+export const WIN_MESSAGES = ['WOWIE! You\'ve done it now...', 'Amazong.', 'Well did!', 'We\'re all very proud.', 'That one was easy.', 'Showoff.', 'Oh, come on, you definitely cheated.', 'Hmmf.']
 export const GAME_COPIED_MESSAGE = 'Game copied to clipboard - I\'m sure everyone can\'t wait to see how you did.'
 export const NOT_ENOUGH_LETTERS_MESSAGE = 'Are you stupid on purpose?'
 export const WORD_NOT_FOUND_MESSAGE = 'That word is not real. No way. You made that up.'
