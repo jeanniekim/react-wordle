@@ -11,6 +11,7 @@
   --absent-cell-bg-color: '#3a3a3c';
   --correct-cell-bg-color: '#538d4e';
   --present-cell-bg-color: '#b59f3b';
+  font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
 }
 
 .dark {
@@ -27,11 +28,11 @@
 
 .cell-fill-animation {
   animation: onTypeCell linear;
-  animation-duration: 0.35s;
+  animation-duration: 0.1s;
 }
 
 .cell-reveal {
-  animation-duration: 0.35s;
+  animation-duration: 0.2s;
   animation-timing-function: linear;
   animation-fill-mode: backwards;
 }
@@ -49,7 +50,7 @@
 }
 
 .cell-reveal > .letter-container {
-  animation: offsetLetterFlip 0.35s linear;
+  animation: offsetLetterFlip 0.2s linear;
   animation-fill-mode: backwards;
 }
 
