@@ -44,5 +44,6 @@ export const WORDS = [
     'cummy',
     'words',
     'nutss',
-    'perry'
+    'perry',
+    'lmfao'
 ]
