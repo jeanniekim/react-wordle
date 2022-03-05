@@ -294,7 +294,7 @@ function App() {
             <div className="flex justify-center mb-1">
               <button
                 type="button"
-                className="rounded-md border border-transparent shadow-sm mt-5 px-4 py-2 bg-green text-base font-medium text-white hover:bg-green focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green sm:text-sm"
+                className="rounded-md border border-transparent shadow-sm mt-5 px-4 py-2 bg-green-700 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:text-sm"
                 onClick={() => {
                   window.location.reload()
                 }}

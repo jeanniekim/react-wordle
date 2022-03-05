@@ -14,9 +14,9 @@ export const SettingsToggle = ({
   description,
 }: Props) => {
   const toggleHolder = classnames(
-    'w-14 h-8 flex shrink-0 items-center bg-lightgray rounded-full p-1 duration-300 ease-in-out cursor-pointer',
+    'w-14 h-8 flex shrink-0 items-center bg-slate-200 rounded-full p-1 duration-300 ease-in-out cursor-pointer',
     {
-      'bg-green': flag,
+      'bg-green-700': flag,
     }
   )
   const toggleButton = classnames(
